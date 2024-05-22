@@ -16,10 +16,10 @@
             <RowDefinition/>
             <RowDefinition/>
         </Grid.RowDefinitions>
-        <Label x:Name="NameTest" VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="White" FontSize="20">NameTest</Label>
-        <Label x:Name="Description" Grid.Row="1" VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="DarkGray">Description</Label>
-        <Button x:Name="Button1" Grid.Row="2" VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="Black" Background="White" Click="Button_Click_2">выбор 1</Button>
-        <Button x:Name="Button2" Grid.Row="3" VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="Black" Background="White" Click="Button_Click_1">выбор 2</Button>
-        <Button x:Name="Button3" Grid.Row="4" VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="Black" Background="White" Click="Button_Click">выбор 3</Button>
+        <Label x:Name="NameTest" VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="White" FontSize="20"/>
+        <Label x:Name="Description" Grid.Row="1" VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="DarkGray"/>
+        <Button x:Name="Button1" Grid.Row="2" VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="Black" Background="White" Click="Button_Click_2"/>
+        <Button x:Name="Button2" Grid.Row="3" VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="Black" Background="White" Click="Button_Click_1"/>
+        <Button x:Name="Button3" Grid.Row="4" VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="Black" Background="White" Click="Button_Click"/>
     </Grid>
 </Page>

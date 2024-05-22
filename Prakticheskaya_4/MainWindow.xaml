@@ -15,11 +15,13 @@
                 <RowDefinition/>
                 <RowDefinition/>
                 <RowDefinition/>
+                <RowDefinition/>
             </Grid.RowDefinitions>
-            <Label VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="25" FontWeight="Bold">Тест 🤫🧏‍♂️</Label>
-            <Button x:Name="OpenTest" Grid.Row="1" MaxWidth="300" VerticalAlignment="Center" HorizontalAlignment="Center" MinWidth="300" Background="#111111" BorderBrush="#111111" Foreground="White" Click="OpenTest_Click">Открыть тест</Button>
-            <Button x:Name="OpenEditTest" Grid.Row="2" MaxWidth="300" VerticalAlignment="Center" HorizontalAlignment="Center" MinWidth="300" Background="#111111" BorderBrush="#111111" Foreground="White" Click="OpenEditTest_Click">Редактировать тест</Button>
-            <TextBox x:Name="Password" Grid.Row="3" MaxWidth="300" Background="White" BorderBrush="Black" materialDesign:HintAssist.Hint="Скажите смайл фейс и улыбнитесь" VerticalAlignment="Center" HorizontalAlignment="Center" MinWidth="300"></TextBox>
+            <Label VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="25" FontWeight="Bold" Content="{DynamicResource Header}"/>
+            <Button x:Name="OpenTest" Grid.Row="1" MaxWidth="300" VerticalAlignment="Center" HorizontalAlignment="Center" MinWidth="300" Background="#111111" BorderBrush="#111111" Foreground="White" Click="OpenTest_Click" Content="{DynamicResource OpenTest}"/>
+            <Button x:Name="OpenEditTest" Grid.Row="2" MaxWidth="300" VerticalAlignment="Center" HorizontalAlignment="Center" MinWidth="300" Background="#111111" BorderBrush="#111111" Foreground="White" Click="OpenEditTest_Click" Content="{DynamicResource OpenEditTest}"/>
+            <TextBox x:Name="Password" Grid.Row="3" MaxWidth="300" Background="White" BorderBrush="Black" materialDesign:HintAssist.Hint="{DynamicResource Password}" VerticalAlignment="Center" HorizontalAlignment="Center" MinWidth="300"></TextBox>
+            <Button x:Name="ChangeLanguage" Grid.Row="4" MaxWidth="300" VerticalAlignment="Center" HorizontalAlignment="Center" MinWidth="300" Background="#111111" BorderBrush="#111111" Foreground="White" Click="ChangeLanguage_Click" Content="{DynamicResource ChangeLanguage}"/>
         </Grid>
     </Grid>
 </Window>

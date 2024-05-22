@@ -17,9 +17,9 @@
                 <ColumnDefinition Width="163*"/>
                 <ColumnDefinition Width="163*"/>
             </Grid.ColumnDefinitions>
-            <Button x:Name="Exit" Background="White" Foreground="Black" BorderBrush="DarkGray" Margin="5, 0, 5, 0" Click="Exit_Click">Выйти</Button>
-            <Button x:Name="EditTest" Grid.Column="1" Background="White" Foreground="Black" BorderBrush="DarkGray" Margin="5, 0, 5, 0" Click="EditTest_Click">Редактор теста</Button>
-            <Button x:Name="ProytiTest" Grid.Column="2" Background="White" Foreground="Black" BorderBrush="DarkGray" Margin="5, 0, 5, 0" Click="ProytiTest_Click">Пройти тест</Button>
+            <Button x:Name="Exit" Background="White" Foreground="Black" BorderBrush="DarkGray" Margin="5, 0, 5, 0" Click="Exit_Click" Content="{DynamicResource Exit}"/>
+            <Button x:Name="EditTest" Grid.Column="1" Background="White" Foreground="Black" BorderBrush="DarkGray" Margin="5, 0, 5, 0" Click="EditTest_Click" Content="{DynamicResource EditTest}"/>
+            <Button x:Name="ProytiTest" Grid.Column="2" Background="White" Foreground="Black" BorderBrush="DarkGray" Margin="5, 0, 5, 0" Click="ProytiTest_Click" Content="{DynamicResource ProytiTest}"/>
         </Grid>
         <Frame x:Name="PgFrame" Grid.Row="1" NavigationUIVisibility="Hidden"></Frame>
     </Grid>

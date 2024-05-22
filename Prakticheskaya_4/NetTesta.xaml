@@ -9,6 +9,6 @@
       Title="NetTesta">
 
     <Grid>
-        <Label VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="30" Foreground="White">Список тестов пуст.</Label>
+        <Label VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="30" Foreground="White" Content="{DynamicResource NetTesta}"></Label>
     </Grid>
 </Page>

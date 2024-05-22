@@ -9,6 +9,6 @@
       Title="EditTest">
     <Grid>
         <DataGrid x:Name="DataGridX" VerticalAlignment="Top" HorizontalAlignment="Center" Background="White"/>
-        <Button VerticalAlignment="Bottom" HorizontalAlignment="Center" Foreground="White" Background="Black" BorderBrush="Black" Click="Button_Click">Изменить внесенные данные</Button>
+        <Button VerticalAlignment="Bottom" HorizontalAlignment="Center" Foreground="White" Background="Black" BorderBrush="Black" Click="Button_Click" Content="{DynamicResource SaveChangesButton}"/>
     </Grid>
 </Page>

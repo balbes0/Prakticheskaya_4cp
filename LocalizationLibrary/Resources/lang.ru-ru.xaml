@@ -1,0 +1,15 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+                    xmlns:v="clr-namespace:System;assembly=mscorlib">
+    <v:String x:Key="OpenTest">Пройти тест</v:String>
+    <v:String x:Key="OpenEditTest">Редактировать тест</v:String>
+    <v:String x:Key="Password">Скажите смайл фейс и улыбнитесь</v:String>
+    <v:String x:Key="Header">Тест🤫🧏‍♂️</v:String>
+    <v:String x:Key="ChangeLanguage">Continue in English</v:String>
+    <v:String x:Key="NetTesta">Список тестов пуст.</v:String>
+    <v:String x:Key="SaveChangesButton">Изменить внесенные данные</v:String>
+    <v:String x:Key="Exit">Выйти</v:String>
+    <v:String x:Key="EditTest">Редактор теста</v:String>
+    <v:String x:Key="ProytiTest">Пройти тест</v:String>
+    <v:String x:Key="TestCompleted">Тест был пройден, кол-во правильных ответов {0}, кол-во неправильных {1}</v:String>
+</ResourceDictionary>

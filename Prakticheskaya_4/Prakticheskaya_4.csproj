@@ -18,7 +18,14 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Resource Include="Fxie5ECYWow.jpg" />
+    <ProjectReference Include="..\ConverterLib\ConverterLib.csproj" />
+    <ProjectReference Include="..\LocalizationLibrary\LocalizationLibrary.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Fxie5ECYWow.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
   </ItemGroup>
 
 </Project>

@@ -1,17 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
+﻿using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
+using ConverterLib;
 
 namespace Prakticheskaya_4
 {
@@ -21,7 +10,8 @@ namespace Prakticheskaya_4
         int index = 0;
         int correct = 0;
         int incorrect = 0;
-        
+        private bool IsEnglish;
+
         private void SetPage()
         {
             if (index < testlist.Count)
@@ -34,11 +24,12 @@ namespace Prakticheskaya_4
             }
         }
 
-        public PageTest()
+        public PageTest(bool IsEnglish_)
         {
             InitializeComponent();
-            testlist = JSONchik.myDeserialize<List<Test>>();
+            testlist = MyConverter.MyDeserialize<List<Test>>();
             SetPage();
+            IsEnglish = IsEnglish_;
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
@@ -58,9 +49,21 @@ namespace Prakticheskaya_4
             }
             else if (index == testlist.Count - 1)
             {
-                Button1.Visibility = Visibility.Hidden; Button2.Visibility = Visibility.Hidden; Button3.Visibility = Visibility.Hidden;
-                Description.Visibility = Visibility.Hidden; 
-                NameTest.Content = $"Тест был пройден, кол-во правильных ответов {correct}, кол-во неправильных {incorrect}";
+                ShowResult();
+            }
+        }
+
+        private void ShowResult()
+        {
+            Button1.Visibility = Visibility.Hidden; Button2.Visibility = Visibility.Hidden; Button3.Visibility = Visibility.Hidden;
+            Description.Visibility = Visibility.Hidden;
+            if (IsEnglish)
+            {
+                NameTest.Content = "Test completed, number of correct answers " + correct + ", number of incorrect answers " + incorrect;
+            }
+            else
+            {
+                NameTest.Content = "Тест был пройден, кол-во правильных ответов " + correct + ", кол-во неправильных " + incorrect;
             }
         }
 
@@ -81,9 +84,7 @@ namespace Prakticheskaya_4
             }
             else if (index == testlist.Count - 1)
             {
-                Button1.Visibility = Visibility.Hidden; Button2.Visibility = Visibility.Hidden; Button3.Visibility = Visibility.Hidden;
-                Description.Visibility = Visibility.Hidden;
-                NameTest.Content = $"Тест был пройден, кол-во правильных ответов {correct}, кол-во неправильных {incorrect}";
+                ShowResult();
             }
         }
 
@@ -104,9 +105,7 @@ namespace Prakticheskaya_4
             }
             else if (index == testlist.Count - 1)
             {
-                Button1.Visibility = Visibility.Hidden; Button2.Visibility = Visibility.Hidden; Button3.Visibility = Visibility.Hidden;
-                Description.Visibility = Visibility.Hidden;
-                NameTest.Content = $"Тест был пройден, кол-во правильных ответов {correct}, кол-во неправильных {incorrect}";
+                ShowResult();
             }
         }
     }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ConverterLib;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -16,11 +17,12 @@ namespace Prakticheskaya_4
 {
     public partial class WindowTest : Window
     {
-        
-        public WindowTest()
+        private bool IsEnglish;
+        public WindowTest(bool isEnglish_)
         {
             InitializeComponent();
             WindowStartupLocation = WindowStartupLocation.CenterScreen;
+            IsEnglish = isEnglish_;
         }
 
         private void EditTest_Click(object sender, RoutedEventArgs e)
@@ -30,14 +32,14 @@ namespace Prakticheskaya_4
 
         private void ProytiTest_Click(object sender, RoutedEventArgs e)
         {
-            List<Test> testlist = JSONchik.myDeserialize<List<Test>>();
+            List<Test> testlist = MyConverter.MyDeserialize<List<Test>>();
             if (testlist == null || testlist.Count == 0)
             {
                 PgFrame.Content = new NetTesta();
             }
             else if (testlist != null && testlist.Count > 0)
             {
-                PgFrame.Content = new PageTest();
+                PgFrame.Content = new PageTest(IsEnglish);
             }
         }
 

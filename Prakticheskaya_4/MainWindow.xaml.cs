@@ -1,15 +1,6 @@
-﻿using System.Text;
-using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
-using Newtonsoft.Json;
+﻿using System.Windows;
 using System.IO;
+using ConverterLib;
 
 namespace Prakticheskaya_4
 {
@@ -17,6 +8,7 @@ namespace Prakticheskaya_4
     {
         List<Test> testlist = new List<Test>();
         string password = "смайл фейс";
+        private bool isEnglish = false;
         public MainWindow()
         {
             InitializeComponent();
@@ -24,13 +16,13 @@ namespace Prakticheskaya_4
             if (!File.Exists(Environment.GetFolderPath(Environment.SpecialFolder.Desktop) + "\\Тест.json"))
             {
                 using (File.Create(Environment.GetFolderPath(Environment.SpecialFolder.Desktop) + "\\Тест.json")) { }
-                JSONchik.mySerialize(testlist);
+                MyConverter.MySerialize(testlist);
             }
         }
 
         private void OpenTest_Click(object sender, RoutedEventArgs e)
         {
-            WindowTest windowTest = new WindowTest();
+            WindowTest windowTest = new WindowTest(isEnglish);
             windowTest.Show();
             windowTest.EditTest.IsEnabled = false;
             this.Close();
@@ -40,10 +32,28 @@ namespace Prakticheskaya_4
         {
             if (password == Password.Text)
             {
-                WindowTest windowTest = new WindowTest();
+                WindowTest windowTest = new WindowTest(isEnglish);
                 windowTest.Show();
                 this.Close();
             }
+        }
+
+        private void ChangeLanguage_Click(object sender, RoutedEventArgs e)
+        {
+            var dictionary = new ResourceDictionary();
+            if (isEnglish)
+            {
+                dictionary.Source = new Uri("pack://application:,,,/LocalizationLibrary;component/Resources/lang.ru-ru.xaml", UriKind.Absolute);
+                isEnglish = false;
+            }
+            else
+            {
+                dictionary.Source = new Uri("pack://application:,,,/LocalizationLibrary;component/Resources/lang.en-us.xaml", UriKind.Absolute);
+                isEnglish = true;
+            }
+            var oldDictionary = Application.Current.Resources.MergedDictionaries[2];
+            Application.Current.Resources.MergedDictionaries.Remove(oldDictionary);
+            Application.Current.Resources.MergedDictionaries.Add(dictionary);
         }
     }
 }

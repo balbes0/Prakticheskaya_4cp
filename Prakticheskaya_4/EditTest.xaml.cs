@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ConverterLib;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -21,7 +22,7 @@ namespace Prakticheskaya_4
         public EditTest()
         {
             InitializeComponent();
-            testlist = JSONchik.myDeserialize<List<Test>>();
+            testlist = MyConverter.MyDeserialize<List<Test>>();
             DataGridX.ItemsSource = testlist;
         }
 
@@ -35,7 +36,7 @@ namespace Prakticheskaya_4
                     testlist2.Add(item2);
                 }
             }
-            JSONchik.mySerialize(testlist2);
+            MyConverter.MySerialize(testlist2);
         }
     }
 }
